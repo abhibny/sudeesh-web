@@ -37,7 +37,7 @@ body { margin: 0; }
   --name-line-height: 36px;
   --portrait-aspect: 440.649169921875 / 265.3923645019531;
   --portrait-height-ratio: 0.602275875270583;
-  --name-photo-min-gap: 0px;
+  --name-photo-min-gap: 224.541748046875px;
   --menu-gap: 14px;
   --menu-height: 200.0001220703125px;
   --menu-size: 24px;
@@ -215,13 +215,6 @@ body { margin: 0; }
   height: var(--footer-gap);
 }
 
-/* Frame 01: preserve the breathing room even on shorter desktop windows. */
-@media (min-width: 1024px) {
-  .page {
-    --name-photo-min-gap: 224.541748046875px;
-  }
-}
-
 /* Frame 02 (14:36) retains the desktop column and typography. */
 @media (min-width: 601px) and (max-width: 1023px) {
   .page {
@@ -245,6 +238,7 @@ body { margin: 0; }
     --name-line-height: 26.90966033935547px;
     --portrait-aspect: 329.381103515625 / 198.37828063964844;
     --portrait-height-ratio: 0.6022758395131732;
+    --name-photo-min-gap: 0px;
     --menu-gap: 10.464859008789062px;
     --menu-height: 149.4981689453125px;
     --menu-size: 17.939773559570312px;

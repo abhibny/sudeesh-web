@@ -76,7 +76,7 @@ All seven rule images fill the shared column width with proportional height. Kee
 
 The page follows the current viewport height. The photograph, menu, and footer form a bottom-aligned stack; extra vertical space goes above the photograph. In frame 01, preserve the 158.773193 px gap between the last menu rule and the bottom line, and the 38.660889 px inset from that line to the page edge. The measured tablet and mobile gaps are retained at their respective breakpoints. Do not use the Figma canvas heights as minimum page heights: on shorter viewports, that would push the bottom line below the visible page. If the content cannot fit, allow the page to scroll while preserving element sizes and gaps.
 
-Desktop layouts also preserve at least 224.541748 px between the bottom of the name's text box and the top of the photograph, measured from frame 01. Shorter desktop windows scroll rather than collapsing this breathing room. Taller windows can add whitespace above the photograph while retaining the measured gaps below it.
+Desktop and tablet layouts above 600 px also preserve at least 224.541748 px between the bottom of the name's text box and the top of the photograph, measured from frame 01. Shorter windows scroll rather than collapsing this breathing room. This includes intermediate widths such as 873 px. Mobile layouts retain their separate spacing. Taller windows can add whitespace above the photograph while retaining the measured gaps below it.
 
 ## Dropdowns
 
