@@ -1,0 +1,13 @@
+{
+  "name": "sudeesh-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sudeesh Yezhuvath's personal page",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

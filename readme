@@ -1,0 +1,103 @@
+# Sudeesh Yezhuvath
+
+A personal page for Sudeesh Yezhuvath, based on the supplied Figma design. The homepage contains his name, a black-and-white photograph, and four rows: Artist Bio, Portfolio, Exhibitions, and Contact.
+
+Built with plain HTML and CSS. The photograph, SVG rules, chevrons, and IBM Plex Sans fonts are stored locally. The page has no runtime dependencies or external asset requests.
+
+## Run locally
+
+Requires Node.js 20 or newer. No dependency installation is needed.
+
+```powershell
+npm.cmd run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173). Stop the server with Ctrl+C.
+
+To use another port:
+
+```powershell
+npm.cmd run dev -- --port 3000
+```
+
+## Build
+
+```powershell
+npm.cmd run build
+```
+
+The generated `dist/` folder contains `index.html`, `styles.css`, and `assets/`. It can be served by a static host. Asset paths are relative so the build also works under a repository subpath.
+
+## Publish
+
+Repository: [abhibny/sudeesh-web](https://github.com/abhibny/sudeesh-web)
+
+Website: [abhibny.github.io/sudeesh-web](https://abhibny.github.io/sudeesh-web/)
+
+The GitHub Pages workflow in `.github/workflows/pages.yml` runs the build and publishes `dist/` whenever changes are pushed to `main`. It can also be run manually from the repository's Actions tab. The repository uses GitHub Actions as its Pages publishing source.
+
+## Figma reference and dimensions
+
+[Original Figma file](https://www.figma.com/design/Ax0oTzzCzFyxYzFIjSLelV/web?node-id=14-2)
+
+Frames 01, 02, and 03 are the desktop, tablet, and mobile versions of the same homepage. Preserve their measured dimensions, type sizes, line heights, image crop, rules, chevrons, and alignment when making changes.
+
+All measurements below are in CSS pixels. Tables are rounded for readability; `styles.css` retains the measured precision.
+
+| Measurement | 01 - Desktop | 02 - Tablet | 03 - Mobile |
+| --- | --- | --- | --- |
+| Figma node | 14:10 | 14:36 | 14:38 |
+| Reference canvas | 1440 x 1024 | 744 x 1133 | 402 x 874 |
+| Content width | 440.649 | 440.649 | 329.381 |
+| Photograph size | 440.649 x 265.392 | 440.649 x 265.392 | 329.381 x 198.378 |
+| Name text box | 210 x 72 | 210 x 72 | 157 x 54 |
+| Name font size / line height | 36 / 36 | 36 / 36 | 26.909660 / 26.909660 |
+| Menu font size / line height | 24 / 36 | 24 / 36 | 17.939774 / 26.909660 |
+| Menu row height | 50 | 50 | 37.375 |
+| Photograph-to-menu gap | 14 | 14 | 10.465 |
+| Rule thickness | 1 | 1 | 0.747491 |
+| Menu divider colour | #C9C9C9 | #9F9F9F | #9F9F9F |
+
+Vertical positions measured from the top of each reference canvas:
+
+| Element | 01 - Desktop | 02 - Tablet | 03 - Mobile |
+| --- | --- | --- | --- |
+| Top rule | 38.661 | 38.661 | 42.441 |
+| Name text box | 50.632 | 50.632 | 51.389 |
+| Photograph | 347.173 | 456.185 | 354.536 |
+| First menu rule | 626.566 | 735.577 | 563.379 |
+| Bottom rule | 985.339 | 1094.350 | 831.559 |
+
+The stylesheet selects the mobile values up to 600 px, tablet values from 601 to 1023 px, and desktop values from 1024 px. These breakpoint boundaries are implementation choices; the three frame measurements come from Figma.
+
+Typography uses fixed pixel values for each format. Do not replace them with fluid viewport sizing or round the mobile fonts to 18 px and 27 px. The column stays at its reference width unless the viewport is too narrow to fit it with 16 px side margins.
+
+All seven rule images fill the shared column width with proportional height. Keep their left and right edges aligned with the photograph and menu when switching between desktop and mobile SVG sources.
+
+The page follows the current viewport height. The photograph, menu, and footer form a bottom-aligned stack; extra vertical space goes above the photograph. In frame 01, preserve the 158.773193 px gap between the last menu rule and the bottom line, and the 38.660889 px inset from that line to the page edge. The measured tablet and mobile gaps are retained at their respective breakpoints. Do not use the Figma canvas heights as minimum page heights: on shorter viewports, that would push the bottom line below the visible page. If the content cannot fit, allow the page to scroll while preserving element sizes and gaps.
+
+Desktop layouts also preserve at least 224.541748 px between the bottom of the name's text box and the top of the photograph, measured from frame 01. Shorter desktop windows scroll rather than collapsing this breathing room. Taller windows can add whitespace above the photograph while retaining the measured gaps below it.
+
+## Dropdowns
+
+All four rows use native HTML disclosure controls. Click a row, or focus it with Tab and press Enter or Space, to open or close it. Multiple sections can stay open together. The photograph retains its position while expanded content pushes the following rows and footer down.
+
+[Frame 4](https://www.figma.com/design/Ax0oTzzCzFyxYzFIjSLelV/web?node-id=21-116) shows Artist Bio expanded. [Frame 5](https://www.figma.com/design/Ax0oTzzCzFyxYzFIjSLelV/web?node-id=21-179) shows Artist Bio and Exhibitions expanded together. Body text is 15 px with a 20 px line height. The desktop biography adds 182 px of content; the exhibition list adds approximately 328.58 px.
+
+The biography uses the supplied Figma placeholder text. Exhibition titles and grey image placeholders also follow Figma. Portfolio and Contact show coming-soon messages until their content is supplied. Replace these placeholders in `index.html` when the actual material is available.
+
+## Project files
+
+```text
+index.html          Page structure and menu labels
+styles.css          Figma measurements, typography, and responsive layouts
+assets/             Original photograph, SVGs, local fonts, and font license
+scripts/serve.mjs   Local development server
+scripts/build.mjs   Static build script
+package.json        Development and build commands
+readme              Project documentation
+```
+
+`dist/` and `.preview/` are ignored by Git. Edit the source files and rebuild rather than editing `dist/` directly.
+
+IBM Plex Sans is distributed under the SIL Open Font License; see `assets/OFL.txt`.
