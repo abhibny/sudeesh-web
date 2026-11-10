@@ -262,3 +262,10 @@ body { margin: 0; }
     left: -0.26428px;
   }
 }
+
+/* Frame 03: phone browser controls must not collapse the name-to-photo gap. */
+@media (max-width: 480px) {
+  .page {
+    --name-photo-min-gap: 249.14693069458008px;
+  }
+}

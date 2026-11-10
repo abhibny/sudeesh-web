@@ -78,6 +78,8 @@ The page follows the current viewport height. The photograph, menu, and footer f
 
 Desktop and tablet layouts above 600 px also preserve at least 224.541748 px between the bottom of the name's text box and the top of the photograph, measured from frame 01. Shorter windows scroll rather than collapsing this breathing room. This includes intermediate widths such as 873 px. Mobile layouts retain their separate spacing. Taller windows can add whitespace above the photograph while retaining the measured gaps below it.
 
+At phone widths up to 480 px, preserve a 249.146931 px minimum name-to-photograph gap from frame 03. Browser toolbars and shorter usable viewport heights must not squeeze this space. The page can scroll to retain the photograph, typography, and footer dimensions. Wider mobile layouts from 481 to 600 px keep their existing spacing, including the approved 555 px layout.
+
 ## Dropdowns
 
 All four rows use native HTML disclosure controls. Click a row, or focus it with Tab and press Enter or Space, to open or close it. Multiple sections can stay open together. The photograph retains its position while expanded content pushes the following rows and footer down.
